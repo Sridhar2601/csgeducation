@@ -9,7 +9,7 @@ const CourseDetail = () => {
   const { id } = useParams();
   const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
   const [showFullSyllabus, setShowFullSyllabus] = useState(false);
-  
+
   const course = courses.find(c => c.id === id);
 
   if (!course) {
@@ -98,13 +98,13 @@ const CourseDetail = () => {
         <title>{course.title} Course - CSG Education | Professional Training</title>
         <meta name="description" content={`${course.description} Duration: ${course.duration}. Expert instruction in ${course.mode} mode. Enroll at CSG Education today.`} />
         <meta name="keywords" content={`${course.title}, ${course.category}, ${course.technologies?.join(', ') || ''}, computer training, CSG Education`} />
-        
+
         {/* Open Graph */}
         <meta property="og:title" content={`${course.title} Course - CSG Education`} />
         <meta property="og:description" content={course.short} />
         <meta property="og:image" content={course.image} />
         <meta property="og:type" content="website" />
-        
+
         {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
@@ -113,7 +113,7 @@ const CourseDetail = () => {
 
       <main id="main-content" className="pt-20">
         {/* Course Hero */}
-        <section className="py-16 bg-gradient-to-r from-primary-600 to-accent-600 sticky">
+        <section className="py-16 bg-gradient-to-r from-primary-600 to-accent-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -127,11 +127,11 @@ const CourseDetail = () => {
                   </span>
                   <span className="ml-3 text-white/90">{course.category}</span>
                 </div>
-                
+
                 <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
                   {course.title}
                 </h1>
-                
+
                 <p className="text-xl opacity-90 mb-8">
                   {course.short}
                 </p>
@@ -315,19 +315,20 @@ const CourseDetail = () => {
               </motion.section>
             </div>
 
+
             {/* Sidebar */}
-            <div className="space-y-8">
+            <div className="lg:col-span-1 space-y-8">
               {/* Enrollment Card */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg p-6 sticky top-24"
+                className="bg-white rounded-xl shadow-lg p-6"
               >
                 <h3 className="text-lg font-heading font-semibold text-gray-900 mb-4">
                   Course Information
                 </h3>
-                
+
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between">
                     <span className="text-gray-600">Duration:</span>
@@ -398,7 +399,9 @@ const CourseDetail = () => {
                         className="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
                       >
                         <h4 className="font-medium text-gray-900 text-sm">{relatedCourse.title}</h4>
-                        <p className="text-xs text-gray-600 mt-1">{relatedCourse.duration} • {relatedCourse.level}</p>
+                        <p className="text-xs text-gray-600 mt-1">
+                          {relatedCourse.duration} • {relatedCourse.level}
+                        </p>
                       </Link>
                     ))}
                 </div>
@@ -407,6 +410,8 @@ const CourseDetail = () => {
                 </Link>
               </motion.div>
             </div>
+
+
           </div>
         </div>
 

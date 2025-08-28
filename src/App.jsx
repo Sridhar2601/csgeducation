@@ -8,6 +8,7 @@ import CourseDetail from './pages/CourseDetail';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Success from './pages/Success';
+import ScrollToTop from "./components/ScrollToTop";
 
 // Error Boundary Component
 import { Component } from 'react';
@@ -67,6 +68,7 @@ const App = () => {
     <HelmetProvider>
       <ErrorBoundary>
         <Router>
+          <ScrollToTop />
           <div className="App min-h-screen flex flex-col">
             <Header />
             <main className="flex-1">
