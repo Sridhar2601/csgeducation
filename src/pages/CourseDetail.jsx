@@ -113,7 +113,7 @@ const CourseDetail = () => {
 
       <main id="main-content" className="pt-20">
         {/* Course Hero */}
-        <section className="py-16 bg-gradient-to-r from-primary-600 to-accent-600 sticky top-0 z-20">
+        <section className="py-16 bg-gradient-to-r from-primary-600 to-accent-600 sticky">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
